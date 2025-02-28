@@ -11,7 +11,6 @@ export default function Login() {
   const [email,setEmail] = useState('');
 
   const googleLoginSuccess = async (credentialResponse) => {
-    console.log("Google OAuth Response:", credentialResponse); 
 
     if (credentialResponse && credentialResponse.access_token) {
       try {
@@ -26,7 +25,6 @@ export default function Login() {
 
         if (userInfoResponse.ok) {
           const userInfo = await userInfoResponse.json();
-          console.log("User Info:", userInfo);
           console.log("User Email:", userInfo.email);
           console.log("User Name:", userInfo.name);
           nav('/');
@@ -51,6 +49,14 @@ export default function Login() {
     onError: googleLoginError,
   });
 
+  function handleEmailChange(e){
+    setEmail(e.target.value);
+  }
+
+  function sendOTP(){
+    console.log("sending OTP function.")
+  }
+
   return (
     <div className="min-high container-fluid d-flex justify-content-center align-items-center bg-light">
       <div className="row width-75 shadow-lg rounded bg-white p-4">
@@ -73,9 +79,16 @@ export default function Login() {
 
             <div className="mb-3">
               <label className="form-label my-2">Email Address:</label>
-              <input type="email" className="form-control p-3" placeholder="Enter your email" required />
+              <input
+                type="email"
+                className="form-control p-3"
+                placeholder="Enter your email"
+                value={email} 
+                onChange={handleEmailChange} 
+                required
+              />
             </div>
-            <button type="button" className="btn btn-dark w-100 p-3">Send OTP</button>
+            <button type="button" onClick={sendOTP()} className="btn btn-dark w-100 p-3">Send OTP</button>
           </form>
         </div>
       </div>
