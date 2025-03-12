@@ -47,7 +47,7 @@ export default function Login() {
               name: userInfo.name
             });
 
-            nav('/');
+            nav('/slots');
 
           } catch (e) {
             console.error(e);

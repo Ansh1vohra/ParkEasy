@@ -6,4 +6,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    font-size: 1rem;
+    transition: all 0.25s;
+    cursor: pointer;
+}
+.slotBox:hover{
+    background-color: black;
+    color: white;
 }

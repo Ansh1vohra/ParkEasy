@@ -2,6 +2,7 @@ import "./pageComman.css";
 import { useNavigate } from "react-router";
 import { motion } from "framer-motion";
 
+
 export default function Home() {
   const navigate = useNavigate();
 
@@ -21,7 +22,9 @@ export default function Home() {
 
       {/* Enhanced Button with Hover Animation */}
       <motion.button
-        onClick={() => navigate('/slots')}
+        onClick={() => 
+          navigate('/slots')
+        }
         className="btn btn-primary fs-5"
         whileHover={{
           scale: 1.05,
