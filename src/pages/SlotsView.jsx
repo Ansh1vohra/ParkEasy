@@ -9,7 +9,7 @@ import "./SlotView.css";
 import io from "socket.io-client";
 import axios from "axios";
 
-const socket = io("http://localhost:5000");
+const socket = io("https://parkeasy-server.vercel.app");
 
 export default function SlotsView() {
     const { user } = useContext(UserContext);
@@ -20,7 +20,7 @@ export default function SlotsView() {
     useEffect(() => {
         const fetchBookings = async () => {
             try {
-                const response = await axios.get("http://localhost:5000/api/bookings");
+                const response = await axios.get("https://parkeasy-server.vercel.app/api/bookings");
                 const bookings = response.data.bookings;
 
                 // Get the current time

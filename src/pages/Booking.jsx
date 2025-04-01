@@ -37,7 +37,7 @@ const BookingPage = () => {
         setSlotNumber(1101);
 
         try {
-            const response = await axios.post("http://localhost:5000/api/bookings/create", {
+            const response = await axios.post("https://parkeasy-server.vercel.app/api/bookings/create", {
                 userEmail: user.email,
                 parkingDuration: parkingDuration,
                 slotNumber: 1101
