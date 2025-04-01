@@ -1,17 +1,24 @@
 .slotBox{
-    width: 200px;
+    width: 400px;
     border:2px solid black;
     border-radius: 4px;
-    height:250px;
+    height:200px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     font-size: 1rem;
     transition: all 0.25s;
-    cursor: pointer;
+    overflow: hidden;
 }
-.slotBox:hover{
-    background-color: black;
-    color: white;
+
+.slotBox img{
+    width: 100%;
+}
+
+@media screen and (max-width:768px) {
+    .slotBox{
+        width: 250px;
+        height: 150px;
+    }
 }

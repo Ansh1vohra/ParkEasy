@@ -6,6 +6,12 @@
     font-size: 3rem;
 }
 
+.wid{
+    margin:3rem auto;
+    max-width: 500px;
+
+}
+
 @media screen and (max-width:768px){
     .headingFont{
         font-size: 2.5rem;

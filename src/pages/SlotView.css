@@ -1,0 +1,47 @@
+.card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+.urimage {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.slot-status {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 6px;
+}
+
+.free {
+    background-color: #28a745;
+    color: white;
+}
+
+.booked {
+    background-color: #dc3545;
+    color: white;
+}
+
+.book-btn {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.book-btn:hover {
+    background: linear-gradient(135deg, #e3644e, #f68b57);
+    transform: scale(1.05);
+}
