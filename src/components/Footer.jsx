@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import Logo from "../assets/logoWhite.png";
 import "./Footer.css";
 
 function Footer() {
@@ -17,7 +18,9 @@ function Footer() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h5 className="text-primary mb-4">ParkEasy</h5>
+            <h5 className="text-primary mb-4">
+              <img src={Logo} alt="Parkeasy" width="175px" />
+            </h5>
             <p className="">
               Smart, hassle-free parking solutions for modern cities. 
               Book your spot in advance and save time.

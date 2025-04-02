@@ -3,6 +3,7 @@ import { UserContext } from "../UserContext/UserContext";
 import { QRCodeCanvas } from "qrcode.react";
 import axios from "axios";
 import "./BookingHistory.css"; // Optional styling
+import "./pageComman.css";
 
 export default function BookingHistory() {
     const { user } = useContext(UserContext);
@@ -30,14 +31,14 @@ export default function BookingHistory() {
 
     if (!user) {
         return (
-            <div className="container text-center mt-5">
+            <div className="container text-center mt-5 min-high">
                 <h3>Please Sign in to View Booking History</h3>
             </div>
         );
     }
 
     return (
-        <div className="container mt-4">
+        <div className="container mt-4 min-high">
             <h2 className="text-center fw-bold mb-3">Booking History</h2>
 
             {loading ? (
