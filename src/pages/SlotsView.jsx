@@ -9,7 +9,7 @@ import "./SlotView.css";
 import io from "socket.io-client";
 import axios from "axios";
 
-const socket = io("https://parkeasy-server.vercel.app");
+const socket = io("https://parkeasy-server.onrender.com/");
 
 export default function SlotsView() {
     const { user } = useContext(UserContext);
