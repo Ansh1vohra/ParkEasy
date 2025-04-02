@@ -34,7 +34,7 @@ export default function Login() {
           console.log("User Email:", userInfo.email);
           console.log("User Name:", userInfo.name);
           try {
-            const response = await axios.post("https://parkeasy-server.vercel.app/api/users/signin", {
+            const response = await axios.post("https://parkeasy-server.onrender.com/api/users/signin", {
               userMail: userInfo.email,
               userName: userInfo.name
             });
@@ -83,7 +83,7 @@ export default function Login() {
 
   async function sendOTP() {
     try {
-      const response = await axios.post('https://parkeasy-server.vercel.app/api/users/send-otp', {
+      const response = await axios.post('https://parkeasy-server.onrender.com/api/users/send-otp', {
         email: email
       })
 
@@ -102,7 +102,7 @@ export default function Login() {
 
   async function verifyOTP() {
     try {
-      const res = await axios.post('https://parkeasy-server.vercel.app/api/users/verify-otp', {
+      const res = await axios.post('https://parkeasy-server.onrender.com/api/users/verify-otp', {
         email: email,
         otp: otp
       })
@@ -111,7 +111,7 @@ export default function Login() {
 
       if (res != null) {
         try {
-          const signinResponse = await axios.post("https://parkeasy-server.vercel.app/api/users/signin", {
+          const signinResponse = await axios.post("https://parkeasy-server.onrender.com/api/users/signin", {
             userMail: email,
             userName: email.split('@')[0]
           });

@@ -20,7 +20,7 @@ export default function SlotsView() {
     useEffect(() => {
         const fetchBookings = async () => {
             try {
-                const response = await axios.get("https://parkeasy-server.vercel.app/api/bookings");
+                const response = await axios.get("https://parkeasy-server.onrender.com/api/bookings");
                 const bookings = response.data.bookings;
 
                 // Get the current time

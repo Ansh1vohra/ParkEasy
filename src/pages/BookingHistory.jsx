@@ -16,7 +16,7 @@ export default function BookingHistory() {
 
         const fetchBookings = async () => {
             try {
-                const response = await axios.get(`https://parkeasy-server.vercel.app/api/bookings/${user.email}`);
+                const response = await axios.get(`https://parkeasy-server.onrender.com/api/bookings/${user.email}`);
                 setBookings(response.data.bookings);
             } catch (err) {
                 setError("No bookings found.");
