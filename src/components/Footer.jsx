@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import "./Footer.css";
-// import { Facebook, Twitter, Instagram, Linkedin } from 'react-bootstrap-icons';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -19,24 +18,24 @@ function Footer() {
             viewport={{ once: true }}
           >
             <h5 className="text-primary mb-4">ParkEasy</h5>
-            <p>
+            <p className="">
               Smart, hassle-free parking solutions for modern cities. 
               Book your spot in advance and save time.
             </p>
             <div className="social-icons mt-4">
-              {/* <a href="#" className="text-white me-3">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="text-white me-3">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="text-white me-3">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="text-white">
-                <Linkedin size={20} />
-              </a>
-            */}</div> 
+              <Link to="#" className=" me-3">
+                <i className="bi bi-facebook"></i>
+              </Link>
+              <Link to="#" className=" me-3">
+                <i className="bi bi-twitter"></i>
+              </Link>
+              <Link to="#" className=" me-3">
+                <i className="bi bi-instagram"></i>
+              </Link>
+              <Link to="#" className="">
+                <i className="bi bi-linkedin"></i>
+              </Link>
+            </div>
           </motion.div>
 
           {/* Column 2: Quick Links */}
@@ -75,16 +74,16 @@ function Footer() {
             <h5 className="mb-4">Support</h5>
             <ul className="list-unstyled">
               <li className="mb-2">
-                <a href="#" className=" footer-link">FAQs</a>
+                <Link to="/faq" className=" footer-link">FAQs</Link>
               </li>
               <li className="mb-2">
-                <a href="#" className=" footer-link">Contact Us</a>
+                <Link to="/contact" className=" footer-link">Contact Us</Link>
               </li>
               <li className="mb-2">
-                <a href="#" className=" footer-link">Privacy Policy</a>
+                <Link to="/privacy" className=" footer-link">Privacy Policy</Link>
               </li>
               <li className="mb-2">
-                <a href="#" className=" footer-link">Terms of Service</a>
+                <Link to="/terms" className=" footer-link">Terms of Service</Link>
               </li>
             </ul>
           </motion.div>
@@ -98,7 +97,7 @@ function Footer() {
             viewport={{ once: true }}
           >
             <h5 className="mb-4">Contact Us</h5>
-            <ul className="list-unstyled">
+            <ul className="list-unstyled ">
               <li className="mb-2">
                 <i className="bi bi-geo-alt me-2"></i> Vit University, Vellore, India
               </li>
@@ -115,7 +114,7 @@ function Footer() {
         <hr className="my-4 bg-secondary" />
 
         <div className="row">
-          <div className="col-md-12 text-center">
+          <div className="col-md-12 text-center ">
             <p className="mb-0">
               &copy; {currentYear} ParkEasy. All rights reserved.
             </p>
