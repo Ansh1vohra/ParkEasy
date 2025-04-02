@@ -20,33 +20,35 @@ export default function ParkingLogin() {
   }
 
   return (
-    <div className="flex justify-center align-center min-high wid">
-      <form onSubmit={handleParkingLogin} className="p-4 border rounded">
-        <h2 className="text-center">Parking Provider Login</h2>
+    <div className="min-high d-flex justify-content-center align-items-center">
+      <div className="flex justify-center align-center wid">
+        <form onSubmit={handleParkingLogin} className="p-4 border rounded">
+          <h2 className="text-center">Parking Provider Login</h2>
 
-        {/* Error Message */}
-        {error && <p className="text-danger">{error}</p>}
+          {/* Error Message */}
+          {error && <p className="text-danger">{error}</p>}
 
-        <label>Username:</label>
-        <input
-          type="text"
-          className="form-control mb-2"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
+          <label>Username:</label>
+          <input
+            type="text"
+            className="form-control mb-2"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
 
-        <label>Password:</label>
-        <input
-          type="password"
-          className="form-control mb-2"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+          <label>Password:</label>
+          <input
+            type="password"
+            className="form-control mb-2"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
 
-        <button className="btn btn-primary w-100">Submit</button>
-      </form>
+          <button className="btn btn-primary w-100">Submit</button>
+        </form>
+      </div>
     </div>
   );
 }

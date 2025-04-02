@@ -1,6 +1,7 @@
 import './App.css';
 import {Routes,Route} from 'react-router-dom';
 import Header from './components/Header';
+import Footer from "./components/Footer";
 import Home from './pages/Home';
 import Login from './pages/Login';
 import ParkingLogin from './pages/ParkingLogin';
@@ -22,6 +23,7 @@ function App() {
         <Route path='/bookinghistory' element={<BookingHistory />} />
         <Route path='/provider-dashboard' element={<ProviderDashboard />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

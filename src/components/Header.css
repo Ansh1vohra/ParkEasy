@@ -1,0 +1,20 @@
+.logo{
+    width: 175px;
+}
+
+.logoutImg{
+    width: 40px;
+}
+
+.logout-btn{
+    border: none;
+}
+
+@media screen and (max-width:768px) {
+    .logo{
+        width: 150px;
+    }
+    .logoutImg{
+        width: 30px;
+    }
+}

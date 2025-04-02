@@ -1,0 +1,27 @@
+.footer-link {
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-link:hover {
+    color: #0d6efd !important;
+  }
+  
+  .social-icons a {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #0d6efd !important;
+    transform: translateY(-3px);
+  }
+  
+  /* Ensure footer stays at bottom */
+  .min-vh-100 {
+    min-height: 100vh;
+  }
+  
+  .flex-grow-1 {
+    flex-grow: 1;
+  }
