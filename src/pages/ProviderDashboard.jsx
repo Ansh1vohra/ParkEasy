@@ -49,6 +49,7 @@ export default function ProviderDashboard() {
           screenshotFormat="image/png"
           width={400}
           height={300}
+          facingMode= "environment"
         />
       </div>
 
