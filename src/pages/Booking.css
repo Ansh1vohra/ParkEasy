@@ -17,6 +17,17 @@
     border-radius: 12px;
 }
 
+.error-msg {
+    margin-top: 10px;
+    padding: 10px;
+    color: #b00020;
+    background-color: #ffe4e4;
+    border: 1px solid #ffb3b3;
+    border-radius: 8px;
+    font-weight: 500;
+    max-width: 400px;
+}
+
 label {
     display: block;
     margin-top: 10px;
