@@ -131,7 +131,7 @@ export default function SlotsView() {
                 
                 {/* Show Book Now button if slot is free and not booked */}
                 {!slot.isBooked && slot.distance > 30 && (
-                    <Link to={`/booking?slot=${slotNumber}`}>
+                    <Link to={`/booking/${slotNumber}`}>
                         <button className="mx-3 btn btn-md btn-danger">Book Now</button>
                     </Link>
                 )}
