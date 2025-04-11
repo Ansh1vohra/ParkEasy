@@ -19,7 +19,8 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/slots' element={<SlotsView />} />
         <Route path='/parkinglogin' element={<ParkingLogin />} />
-        <Route path='/booking' element={<Booking />} />
+        {/* <Route path='/booking' element={<Booking />} /> */}
+        <Route path='/booking/:slotNumber' element={<Booking />} />
         <Route path='/bookinghistory' element={<BookingHistory />} />
         <Route path='/provider-dashboard' element={<ProviderDashboard />} />
       </Routes>
