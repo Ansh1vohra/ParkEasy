@@ -18,32 +18,43 @@ export default function SlotsView() {
         1102: { distance: null, isBooked: false },
         1103: { distance: null, isBooked: false }
     });
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchBookings = async () => {
             try {
+                setLoading(true);
                 const response = await axios.get("https://parkeasy-server.onrender.com/api/bookings");
                 const bookings = response.data.bookings;
                 const currentTime = new Date();
 
-                // Update slots state with booking status
                 setSlots(prevSlots => {
-                    const updatedSlots = {...prevSlots};
+                    const updatedSlots = { ...prevSlots };
+                    
+                    // Reset all booking statuses first
                     Object.keys(updatedSlots).forEach(slotNumber => {
-                        const activeBooking = bookings.some(booking => 
-                            booking.slotNumber === slotNumber && 
-                            new Date(booking.expiryTime) > currentTime
-                        );
-                        updatedSlots[slotNumber].isBooked = activeBooking;
+                        updatedSlots[slotNumber].isBooked = false;
                     });
+
+                    // Mark slots as booked if they have active bookings
+                    bookings.forEach(booking => {
+                        const bookingExpiry = new Date(booking.expiryTime.$date || booking.expiryTime);
+                        if (bookingExpiry > currentTime) {
+                            updatedSlots[booking.slotNumber].isBooked = true;
+                        }
+                    });
+
                     return updatedSlots;
                 });
             } catch (error) {
                 console.error("Error fetching bookings:", error);
+            } finally {
+                setLoading(false);
             }
         };
 
         fetchBookings();
+        const interval = setInterval(fetchBookings, 30000); // Refresh every 30 seconds
 
         // Listen for sensor data from WebSocket
         socket.on("sensorData", (data) => {
@@ -58,10 +69,11 @@ export default function SlotsView() {
         });
 
         return () => {
+            clearInterval(interval);
             socket.off("sensorData");
         };
     }, []);
-
+    
     return (
         <motion.div
             initial={{ opacity: 0 }}
